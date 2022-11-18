@@ -5,42 +5,90 @@
 {% block content %}
 
    <!-- Heading -->
-   <section class="page-section clearfix">
-    <div class="container">
-      <div class="intro">
-        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'ProyectoWebApp/img/principal.jpg' %}" alt="">
-        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
-          <h2 class="section-heading mb-4" >
-            <span class="section-heading-upper">Puntualidad</span>
-            <span class="section-heading-lower">El mejor stock</span>
-          </h2>
-          <p class="mb-3">En la puertra de tu casa en menos de 48 h con el envío normal. En menos de 24 h con el envío express.
-          </p>
-         
-        </div>
+   <main>
+    <section class="hero">
+      <div class="hero-introduction flex">
+        <h2>
+          Elena Joy <br />
+          Photography
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
+          minima assumenda expedita similique quaerat maiores ab, itaque hic
+          explicabo eaque!
+        </p>
+        <a href="#gallery">Gallery</a>
       </div>
-    </div>
-  </section>
-
-
-  
-    <!-- Message -->
-    <section class="page-section cta">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-9 mx-auto">
-            <div class="cta-inner text-center rounded">
-              <h2 class="section-heading mb-4">
-                <span class="section-heading-upper">Compromiso total</span>
-                <span class="section-heading-lower">Garantizado</span>
-              </h2>
-              <p class="mb-0">Con más de 75 años de experiencia a nuestras espaldas, desde Gestión de Pedidos tenemos los conocimientos y herramientas necesarios para llevar cualquier objeto a la puerta de su casa con puntualidad y profesionalidad.</p>
-            </div>
-          </div>
+      <div class="hero-images">
+        <img
+          class="hero-elena"
+          src="{% static 'ProyectoWebApp/img/elena-joy.png' %}"
+          alt="picture of elena joy"
+        />
+        <img src="{% static 'ProyectoWebApp/img/plant1.png' %}" alt="" class="plant1 plant" />
+        <img src="{% static 'ProyectoWebApp/img/plant2.png' %}" alt="" class="plant2 plant" />
+      </div>
+    </section>
+    <section class="about" id="about">
+      <div class="about-image">
+        <h5>MINIMAL</h5>
+        <img src="{% static 'ProyectoWebApp/img/about-image.png' %}" alt="portrait-picture" />
+      </div>
+      <div class="about-text flex" id="work">
+        <h2>Elena Joy</h2>
+        <div class="about-life">
+          <h3>My Life</h3>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Voluptas, maxime reprehenderit. Assumenda necessitatibus id
+            consectetur asperiores harum dolore nihil fuga?
+          </p>
+        </div>
+        <div class="about-work">
+          <h3>My Work</h3>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Voluptas, maxime reprehenderit. Assumenda necessitatibus id
+            consectetur asperiores harum dolore nihil fuga?
+          </p>
+        </div>
+        <div class="about-contact">
+          <h3>Get in touch</h3>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Voluptas, maxime reprehenderit. Assumenda necessitatibus id
+            consectetur asperiores harum dolore nihil fuga?
+          </p>
         </div>
       </div>
     </section>
-
+    <div class="gallery" id="gallery">
+      <header class="gallery-head">
+        <h2>Quality Photography</h2>
+        <p>My work pictures that I took</p>
+      </header>
+      <img class="gallery1" src="{% static 'ProyectoWebApp/img/gallery-1.jpg' %}" alt="man in suit" />
+      <img class="gallery2" src="{% static 'ProyectoWebApp/img/gallery-2.jpg' %}" alt="lady in coat" />
+      <img class="gallery3" src="{% static 'ProyectoWebApp/img/gallery-3.jpg' %}" alt="lady in t-shirt" />
+      <img class="gallery4" src="{% static 'ProyectoWebApp/img/gallery-4.jpg' %}" alt="lady in jacket" />
+    </div>
+    <!-- <section class="contact" id="contact">
+      <div class="form-wrapper flex">
+        <h2>
+          Get in <br />
+          <span> touch.</span>
+        </h2>
+        <form>
+          <label for="email">Your Email:</label>
+          <input type="email" id="email" required />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <img src="{% static 'ProyectoWebApp/img/contact-image.jpg' %}" alt="elena-joy" />
+    </section> -->
+  </main>
+  
+    <!-- Message -->
     {% endblock %}
 
 

@@ -6,9 +6,24 @@
 
 <div class="contenedorFormulario">
 
-    {% if "valido" in request.GET %}
+    <section class="contact" id="contact">
+        <div class="form-wrapper flex">
+          <h2>
+            Get in <br />
+            <span> touch.</span>
+          </h2>
+          <form>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" required />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <img src="{% static 'ProyectoWebApp/img/contact-image.jpg' %}" alt="elena-joy" />
+      </section>
 
-        <p style="color: white";>Información enviada correctamente, gracias</p>
+    <!-- {% if "valido" in request.GET %}
+
+        <p style="color: rgb(0, 0, 0)";>Información enviada correctamente, gracias</p>
 
     {% endif %}
     
@@ -17,7 +32,7 @@
         <table style="color: white; margin: 20px auto;">{{miFormulario.as_table}}</table>
         <input type="submit" value="Enviar" style="width: 150px;">
 
-    </form>
+    </form> -->
    
 </div>
 
