@@ -83,12 +83,8 @@ WSGI_APPLICATION = 'ProyectoWeb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'aurorasite',
-        'USER': 'postgres',
-        'PASSWORD': 'root',
-        'HOST': '127.0.0.1',
-        'PORT': '5433',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
