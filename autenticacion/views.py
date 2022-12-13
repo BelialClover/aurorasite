@@ -4,6 +4,14 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 
+from django.contrib.auth.decorators import login_required
+# Create your views here.
+def login(request):
+    return render(request, 'login.html')
+@login_required
+def home(request):
+    return render(request, 'home.html')
+
 # Create your views here.
 # def autenticacion(request):
 #     return render(request, "registro/registro.html")

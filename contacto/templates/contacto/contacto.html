@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<div class="contenedorFormulario">
+<!-- <div class="contenedorFormulario">
 
     <section class="contact" id="contact">
         <div class="form-wrapper flex">
@@ -21,6 +21,27 @@
         <img src="{% static 'ProyectoWebApp/img/contact.png' %}" alt="elena-joy" />
       </section>
    
+</div> -->
+
+<div class="contenedorFormulario">
+
+  {% if "valido" in request.GET %}
+
+  <p>Información enviada correctamente</p>
+
+
+  {% endif %}
+
+  <form action="" method="POST">
+
+      {% csrf_token %}<!--Toque csrf para activar la seguridad en los formularios-->
+
+  <table style="margin: 20px left;">{{miFormulario.as_table}}</table>
+
+  <input type="submit" value="Enviar" style="width: 150px;">
+
+  </form>
+
 </div>
 
 {% endblock %}

@@ -15,6 +15,10 @@
 
         <button type="submit" class="btn btn-success mb-4" style="font-size: 3rem !important;">Iniciar Sesion</button>
 
+        <button class="btn btn-primary mb-2">
+            <a href="{% url 'social:begin' 'google-oauth2' %}">Login With Google</a>
+        </button>
+
     </div>
     </form>
 

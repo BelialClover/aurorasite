@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'contacto',
     'autenticacion',
     'crispy_forms',
-    
+    'social_django',
 
 ]
 
@@ -55,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'ProyectoWeb.urls'
@@ -69,7 +70,9 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',              
+                'django.contrib.messages.context_processors.messages',    
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',      
             ],
         },
     },
@@ -81,10 +84,20 @@ WSGI_APPLICATION = 'ProyectoWeb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+#Se va a cambiar el password, el puerto*, 
+#name : nombre de base de datos
+#
+
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'aurorasite',
+        'USER': 'postgres',
+        'PASSWORD': 'root',
+        'HOST': '127.0.0.1',
+        #'PORT': '5432',
+        'PORT': '5432',
     }
 }
 
@@ -154,3 +167,24 @@ STATICFILE_DIRS = (
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST="smtp.gmail.com"
+EMAIL_USE_TLS=True
+EMAIL_PORT=587
+EMAIL_HOST_USER='majorawaker9@gmail.com'
+EMAIL_HOST_PASSWORD='bdwrrgbowxetbycr'
+#Se va a cambiar el email host user por la direccion de correo que quieran ya sea la del anuar o la del alexis
+#Se va a cambiar el email host password
+
+#Add this at the bottom in settings.py
+#social app custom settings 
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+]
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_URL = 'logout'
+LOGOUT_REDIRECT_URL = 'login'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '663054470144-cmmhst20tkrkhdsfm8drh6a3rfqf9uhl.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
